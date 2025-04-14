@@ -1,7 +1,6 @@
 import json
 import uuid
 import pika
-import time
 from pika.exceptions import AMQPError
 from src.config import settings
 from src.utils.connection import connection_manager

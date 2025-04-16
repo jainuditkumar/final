@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   rabbitmq-node-1:
     container_name: rabbitmq-node-1
@@ -10,6 +12,8 @@ services:
       - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_ERLANG_COOKIE:-SWQOKODSQALRPCLNMEQG}
     volumes:
       - ./volumes/rabbitmq-node-1:/var/lib/rabbitmq
+      - ./rabbitmq/config/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./rabbitmq/config/definitions.json:/etc/rabbitmq/definitions.json
     networks:
       - rabbitmq_network
 
